@@ -1,11 +1,27 @@
 package org.casadocodigo.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Produto {
+	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	private int id;
 	
 	private String titulo;
 	private String descricao;
 	private int paginas;
 	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getTitulo() {
 		return titulo;
 	}
